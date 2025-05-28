@@ -81,10 +81,10 @@ void ReadValues(int *n, int *m, const char *filename)
         printf("Cannot open file %s\n", filename);
         exit(1);
     }
-    fscanf(f, "%d %d %d %d", &test, m, n, &gen); //CITESC DATELE IMP DIN FISIERUL INITIAL
+    fscanf(f, "%d %d %d %d", &test, m, n, &gen); //I am reading the important dates out of the input
     if (test != 2)
     {
-        printf("Nu este fisierul bun");
+        printf("It is not the good file");
         exit(1);
     }
     fclose(f);
@@ -95,7 +95,7 @@ int IsCellAliveOrNot(int linie, int coloana, SNode *top, char cell)
 
     int count = 0;
     SNode *temp = top;
-    //aici caut de cate ori apare in stiva
+    //how many times does it appear in the stack?
     while(temp) 
     {
         List *p = temp->head;
@@ -113,7 +113,7 @@ int IsCellAliveOrNot(int linie, int coloana, SNode *top, char cell)
     else if (cell == 'X')
         return(count%2? 0:1);
     else {
-            printf("Caracter necunoscut la (%d,%d): %c\n", linie, coloana, cell);
+            printf("Unknown character (%d,%d): %c\n", linie, coloana, cell);
             return -1;
         }
 }
@@ -130,7 +130,7 @@ List* BuildFirstListGeneration(const char *filename, int *gen_number, int n, int
         exit(1);
     }
    
-    fscanf(f, "%d %d %d %d", &test, &m, &n, gen_number); //CITESC DATELE IMP DIN FISIERUL INITIAL
+    fscanf(f, "%d %d %d %d", &test, &m, &n, gen_number); //I am reading important stuff out of the input file
     HelpRows(&n, &middle, &previous, &next);
     len = n;
     strcpy(init_matrix[0], previous);
@@ -142,7 +142,7 @@ List* BuildFirstListGeneration(const char *filename, int *gen_number, int n, int
         ++X+    <-this is middle
         +XX+    <-this is next
     */
-    Concat(&middle, len);  //mai adaug niste celule moarte in margini pentru ultimul si primul element
+    Concat(&middle, len);  //concatenate dead cells
     strcpy(init_matrix[1], middle);
     for (i = 0; i < m; i++)
     {
@@ -309,11 +309,11 @@ int main(int argc, char *argv[])
             exit(1);
         }
     }
-    head = BuildFirstListGeneration(argv[1], &gen_number, n, m, init_matrix); //prima schimbare
-    push(&top, head); //pun prima schimbare in stiva
+    head = BuildFirstListGeneration(argv[1], &gen_number, n, m, init_matrix);
+    push(&top, head); //first list of changes in the list
     
-    FILE* g = fopen(argv[2], "w"); //creez output
-    fprintf(g, "%d", k); //in output pun 1 pentru prima generatie
+    FILE* g = fopen(argv[2], "w"); 
+    fprintf(g, "%d", k); //number of the first generation
     current = head;
     while (current != NULL)
     {
@@ -322,6 +322,7 @@ int main(int argc, char *argv[])
     }
     fprintf(g, "\n");
 
+    //next generations
     for( k = 2; k <= gen_number; k++ )
     {
         fprintf(g, "%d", k);
