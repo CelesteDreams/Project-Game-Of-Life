@@ -76,47 +76,45 @@ Generația 0:     Generația 1:     Generația 2:
  + + + X +        + + X + +        + X X + +
  + + + + +        + + + + +        + + + + +
 ```
-📦 Conținut stivă la generația 1:
+## 📦 Conținut stivă la generația 1:
 1: (1,2); (3,2); (3,3)
 
-📦 Conținut stivă la generația 2:
+## 📦 Conținut stivă la generația 2:
 1: (1 ,2); (3 ,2); (3 ,3)
 
 2: (2 ,1); (2 ,2); (2 ,3); (3 ,1)
 
+## Task 3
+✅ Cerință: Dându-se o inițializare (rădăcina arborelui), se vor creea doi fii: 
+Cel din stânga reprezintă generația 1 obținută cu regula nouă, B.
+Cel din dreapta reprezintă generația 1 obținută cu regulile obișnuite.
+Repetați operația pentru toate nodurile astfel create până la generația K, dată.  
+###  **Rule B** (variantă personalizată - pentru task 3 si 4):  
+ ### 5️⃣ Orice celulă cu exact doi vecini vii → devine vie.  
+### 📌 Formatul fișierelor de intrare este același ca la task-urile anterioare
 ### 🌲 Arbore binar
+
+![image](https://github.com/user-attachments/assets/185d6a91-771e-460b-8e1d-4345ee623d79)
 
 La fiecare generație:
 - Ramura stângă evoluează după **Rule B**.
-- Ramura dreaptă evoluează după **Rule A**. 
-  - **Rule B** (variantă personalizată - pentru task 3 si 4):  
-  5️⃣ Orice celulă cu exact doi vecini vii → devine vie.   
+- Ramura dreaptă evoluează după **Rule A**.   
 
-
+## Task 4
+✅ Cerință:  Se va determina, pentru fiecare nod al arborelui obținut la Taskul 3, până la o generație dată K, cel mai lung lanț Hamiltonian.
 Se construiește recursiv un arbore binar de generații.
+
+### 📌 Formatul fișierelor de intrare este același ca la task-urile anterioare
+
 Pentru fiecare generație:
 - Se afișează matricea actuală.
 - Se afișează lungimea celui mai lung drum Hamiltonian.
 - Se listează coordonatele drumului.
 ---
-
-## 💡 Bonus Task 2
-
-În `task2.c`, este implementată funcționalitatea de a urmări modificările celulelor în timp, permițând reconstrucția **stării inițiale** pornind de la generația finală și lista de schimbări. Se folosește o **stivă de liste** pentru această revenire în timp.
-
----
-##TASK 3
-##TASK 4
-## 
-
-
-- Compilator C (GCC)
-- Sistem POSIX (Linux/Mac), dar compatibil și cu Windows (cu mici ajustări)
-
 ---
 
 ## ✍️ Autori
 
-- 📌 Proiect realizat ca parte din materia de [Algoritmi Fundamentali / Structuri de Date].
-- 🎓 Universitatea ... (completare facultativă)
-- 🧑‍💻 Autor: *Numele tău aici*
+- 📌 Proiect realizat ca parte din materia de [Proiectarea Algoritmilor].
+- 🎓 Universitatea Națională de Știință și Tehnologie Politehnica București - Automatică și Calculatoare - Ingineria Sistemelor
+- 🧑‍💻 Autor: *Goșoiu Denisa Ioana
