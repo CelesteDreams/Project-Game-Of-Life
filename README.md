@@ -106,15 +106,19 @@ Se construiește recursiv un arbore binar de generații.
 
 ### 📌 Formatul fișierelor de intrare este același ca la task-urile anterioare
 
-Pentru fiecare generație:
-- Se afișează matricea actuală.
-- Se afișează lungimea celui mai lung drum Hamiltonian.
-- Se listează coordonatele drumului.
----
----
+📌 Reguli pentru alegerea lanțului Hamiltonian   
+✅ Dacă într-o componentă conexă există mai multe lanțuri de aceeași dimensiune:   
+   -> Se alege lanțul care pornește dintr-un nod de pe linia cu indicele cel mai mic.  
+✅Dacă există mai multe lanțuri care pleacă din aceeași linie, se alege lanțul în care vârful are indicele de coloană cel mai mic.  
+   -> Același principiu se aplică pentru întreaga succesiune de vârfuri din lanț.   
+✅ Dacă într-un graf există mai multe componente conexe cu lanțuri Hamiltoniene:   
+    -> Se ia în considerare componenta cu lanțul cel mai lung.   
+❌ Dacă în graf nu există niciun lanț Hamiltonian:  
+    -> Afișați lungimea -1.  
 
+--- 
 ## ✍️ Autori
 
 - 📌 Proiect realizat ca parte din materia de [Proiectarea Algoritmilor].
 - 🎓 Universitatea Națională de Știință și Tehnologie Politehnica București - Automatică și Calculatoare - Ingineria Sistemelor
-- 🧑‍💻 Autor: *Goșoiu Denisa Ioana
+- 🧑‍💻 Autor: *Goșoiu Denisa Ioana*
