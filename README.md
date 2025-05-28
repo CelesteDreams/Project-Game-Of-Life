@@ -83,6 +83,8 @@ Generația 0:     Generația 1:     Generația 2:
 1: (1 ,2); (3 ,2); (3 ,3)
 
 2: (2 ,1); (2 ,2); (2 ,3); (3 ,1)
+### Bonus
+📌 Dându-se conținutul stivei pentru K generații și matricea corespunzătoare generației K, se va scrie într-un fișier matricea corespunzătoare inițială corespunzătoare generației 0.
 
 ## Task 3
 ✅ Cerință: Dându-se o inițializare (rădăcina arborelui), se vor creea doi fii: 
