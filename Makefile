@@ -1,9 +1,7 @@
 all:compile
 
 clean:
-	rm -f a.out
+	rm -f c.out
 
 compile: 
-	gcc gameoflife.c -o a.out 
-
-
+	gcc task3.c -o c.out 
